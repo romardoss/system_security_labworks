@@ -1,0 +1,9 @@
+SystemSecurityLabWorks.sln
+**/.vs
+**/packages
+**/bin
+**/obj
+**/Properties
+**App.config
+**packages.config
+**SystemSecurityLabWorks.csproj
