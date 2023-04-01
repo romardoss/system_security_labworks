@@ -51,6 +51,11 @@ namespace SystemSecurityLabWorks.Cipher.TritemiusCipher
         public bool ValidateKey(string key)
         {
             string[] keys = key.Split();
+            if(keys.Length != 2)
+            {
+                MessageBox.Show("Key must contain only two numbers");
+                return false;
+            }
             for (int i = 0; i < keys.Length; i++)
             {
                 if (int.TryParse(keys[i], out _))
@@ -59,7 +64,7 @@ namespace SystemSecurityLabWorks.Cipher.TritemiusCipher
                 }
                 else
                 {
-                    MessageBox.Show("Key must be a number");
+                    MessageBox.Show("Key must containt only two numbers");
                     return false;
                 }
             }

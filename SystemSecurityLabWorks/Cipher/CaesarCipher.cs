@@ -17,11 +17,7 @@ namespace SystemSecurityLabWorks.Cipher
 
         public string Encrypt(string input, string key)
         {
-            if (ValidateKey(key))
-            {
-                return Encrypt(input, int.Parse(key));
-            }
-            return input;
+            return Encrypt(input, ValidateAndParseKey(key));
         }
 
         public string Decrypt(string input, int key)
@@ -31,25 +27,27 @@ namespace SystemSecurityLabWorks.Cipher
 
         public string Decrypt(string input, string key)
         {
-            if (ValidateKey(key))
-            {
-                return Encrypt(input, -int.Parse(key));
-            }
-            return input;
+            return Encrypt(input, -ValidateAndParseKey(key));
         }
 
-        public bool ValidateKey(string key)
+        public int ValidateAndParseKey(string key)
         {
-            if (int.TryParse(key, out _))
+            if (int.TryParse(key, out int intKey))
             {
-                return true;
+                return intKey;
             }
             else
-            {
-                //тут можна ключ зі строки перевести у цифровий за кодами символів
-                MessageBox.Show("Key must be a number");
-                return false;
+            {  
+                char[] keyChar = key.ToCharArray();
+                intKey = 0;
+                foreach (char c in keyChar)
+                {
+                    intKey += c;
+                }
+                return intKey;
             }
         }
+
+        
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows;
-
-namespace SystemSecurityLabWorks.Cipher.TritemiusCipher
+﻿namespace SystemSecurityLabWorks.Cipher.TritemiusCipher
 {
     public class SloganCipher : ICipher
     {
@@ -26,18 +23,6 @@ namespace SystemSecurityLabWorks.Cipher.TritemiusCipher
                 letters[i] -= keyLetters[(i + 1) % keyLetters.Length];
             }
             return new string(letters);
-        }
-
-        public bool ValidateKey(string key)
-        {
-            if (double.TryParse(key, out _))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
     }
 }
