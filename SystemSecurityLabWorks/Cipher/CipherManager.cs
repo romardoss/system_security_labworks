@@ -8,7 +8,8 @@ namespace SystemSecurityLabWorks.Cipher
         public static string[] ciphers = {"Caesar", 
             "Tritemius (linear)", 
             "Tritemius (squaire)",
-            "Tritemius (slogan)", 
+            "Tritemius (slogan)",
+            "XOR",
         };
 
         public static string Encrypt(string input, string key, string cipher)
@@ -30,6 +31,10 @@ namespace SystemSecurityLabWorks.Cipher
                 case "Tritemius (slogan)":
                     var tritemius3 = new SloganCipher();
                     return tritemius3.Encrypt(input, key);
+
+                case "XOR":
+                    var xor = new XORCipher();
+                    return xor.Encrypt(input, key);
 
                 default: 
                     MessageBox.Show("Wrong cipher chosen");
@@ -56,6 +61,10 @@ namespace SystemSecurityLabWorks.Cipher
                 case "Tritemius (slogan)":
                     var tritemius3 = new SloganCipher();
                     return tritemius3.Decrypt(input, key);
+
+                case "XOR":
+                    var xor = new XORCipher();
+                    return xor.Decrypt(input, key);
 
                 default:
                     MessageBox.Show("Wrong cipher chosen");

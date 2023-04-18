@@ -18,8 +18,8 @@
         <Canvas Background="#B6C8A9" Width="320" Height="190">
             <TextBlock TextWrapping="Wrap" Text="Berehun Roman" Canvas.Left="66" Canvas.Top="10" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock TextWrapping="Wrap" Text="Group TR-11" Canvas.Left="116" Canvas.Top="50" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock TextWrapping="Wrap" Text="Laboratory work #2" Canvas.Left="90" Canvas.Top="133" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBlock TextWrapping="Wrap" Text="Tritemius Cipher" Canvas.Left="101" Canvas.Top="159" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock TextWrapping="Wrap" Canvas.Left="90" Canvas.Top="133" HorizontalAlignment="Left" VerticalAlignment="Top"><Run Text="Laboratory work #"/><Run Language="uk-ua" Text="3"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Text="XOR Encryption" Canvas.Left="109" Canvas.Top="159" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         </Canvas>
     </Grid>
 </Window>

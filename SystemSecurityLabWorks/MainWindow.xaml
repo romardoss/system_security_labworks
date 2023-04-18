@@ -51,7 +51,7 @@
                 <RadioButton x:Name="TritemiusLinearRadioButton" Content="Tritemius (linear)" Canvas.Left="680" Canvas.Top="60" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="TritemiusSquaireRadioButton" Content="Tritemius (squaire)" Canvas.Left="680" Canvas.Top="80" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="TritemiusSloganRadioButton" Content="Tritemius (slogan)" Canvas.Left="680" Canvas.Top="100" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
-                <RadioButton Content="Lab 3" Canvas.Left="680" Canvas.Top="120" IsChecked="True" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="XORRadioButton" Content="XOR" Canvas.Left="680" Canvas.Top="120" IsChecked="True" RenderTransformOrigin="0.5,0.5"/>
             </Canvas>
         </Canvas>
         <TextBox x:Name="KeyText" TextWrapping="Wrap" Text="Key" Width="600" Height="30" Grid.Row="1" 
