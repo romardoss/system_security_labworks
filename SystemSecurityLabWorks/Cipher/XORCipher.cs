@@ -1,17 +1,33 @@
-﻿using System;
+﻿using Spire.Pdf.Exporting.XPS.Schema;
+using System;
+using System.Collections.Generic;
+using System.Windows;
 
 namespace SystemSecurityLabWorks.Cipher
 {
     public class XORCipher : ICipher
     {
+        private static readonly List<string> KeyToEncryptList = new List<string>();
+        private static readonly List<string> KeyToDecryptList = new List<string>();
+
         public string Encrypt(string input, string key)
         {
-            return Cipher(input, key);
+            if (CheckCipherNotebook(key, true))
+            {
+                KeyToEncryptList.Add(key);
+                return Cipher(input, key);
+            }
+            return "This key was already used for encrypting, try another one";
         }
 
         public string Decrypt(string input, string key)
         {
-            return Cipher(input, key); 
+            if (CheckCipherNotebook(key, false))
+            {
+                KeyToDecryptList.Add(key);
+                return Cipher(input, key);
+            }
+            return "This key was already used for decrypting, try another one";
         }
 
         private string Cipher(string input, string key)
@@ -65,6 +81,27 @@ namespace SystemSecurityLabWorks.Cipher
                 chars[i] = (char)bytes[i];
             }
             return chars;
+        }
+
+        private bool CheckCipherNotebook(string key, bool isEncrypt)
+        {
+            if(isEncrypt)
+            {
+                if(KeyToEncryptList.Contains(key))
+                {
+                    MessageBox.Show("This key was already used for encrypting, try another one");
+                    return false;
+                }
+            }
+            else
+            {
+                if (KeyToDecryptList.Contains(key))
+                {
+                    MessageBox.Show("This key was already used for decrypting, try another one");
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

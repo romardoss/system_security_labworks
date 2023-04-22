@@ -10,6 +10,7 @@ namespace SystemSecurityLabWorks.Cipher
             "Tritemius (squaire)",
             "Tritemius (slogan)",
             "XOR",
+            "Book"
         };
 
         public static string Encrypt(string input, string key, string cipher)
@@ -35,6 +36,10 @@ namespace SystemSecurityLabWorks.Cipher
                 case "XOR":
                     var xor = new XORCipher();
                     return xor.Encrypt(input, key);
+
+                case "Book":
+                    var book = new BookCipher();
+                    return book.Encrypt(input, key);
 
                 default: 
                     MessageBox.Show("Wrong cipher chosen");
@@ -65,6 +70,10 @@ namespace SystemSecurityLabWorks.Cipher
                 case "XOR":
                     var xor = new XORCipher();
                     return xor.Decrypt(input, key);
+
+                case "Book":
+                    var book = new BookCipher();
+                    return book.Decrypt(input, key);
 
                 default:
                     MessageBox.Show("Wrong cipher chosen");
