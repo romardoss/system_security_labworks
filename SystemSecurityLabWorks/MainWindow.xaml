@@ -52,7 +52,17 @@
                 <RadioButton x:Name="TritemiusSquaireRadioButton" Content="Tritemius (squaire)" Canvas.Left="680" Canvas.Top="80" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="TritemiusSloganRadioButton" Content="Tritemius (slogan)" Canvas.Left="680" Canvas.Top="100" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="XORRadioButton" Content="XOR" Canvas.Left="680" Canvas.Top="120" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
-                <RadioButton x:Name="BookRadioButton" Content="Book" Canvas.Left="680" Canvas.Top="140" IsChecked="True" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="BookRadioButton" Content="Book" Canvas.Left="680" Canvas.Top="140" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="DesCBCRadioButton" Content="DES (CBC)" Canvas.Left="680" Canvas.Top="160" IsChecked="True" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="DesECBRadioButton" Content="DES (ECB)" Canvas.Left="680" Canvas.Top="180" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="DesCFBRadioButton" Content="DES (CFB)" Canvas.Left="680" Canvas.Top="200" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="ThreeCBCRadioButton" Content="3-DES (CBC)" Canvas.Left="680" Canvas.Top="220" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="ThreeECBRadioButton" Content="3-DES (ECB)" Canvas.Left="680" Canvas.Top="240" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="ThreeCFBRadioButton" Content="3-DES (CFB)" Canvas.Left="680" Canvas.Top="260" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="AesCBCRadioButton" Content="AES (CBC)" Canvas.Left="680" Canvas.Top="280" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="AesECBRadioButton" Content="AES (ECB)" Canvas.Left="680" Canvas.Top="300" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+                <RadioButton x:Name="AesCFBRadioButton" Content="AES (CFB)" Canvas.Left="680" Canvas.Top="320" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
+
             </Canvas>
         </Canvas>
         <TextBox x:Name="KeyText" TextWrapping="Wrap" Text="Key" Width="600" Height="30" Grid.Row="1" 

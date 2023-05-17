@@ -44,7 +44,10 @@ namespace SystemSecurityLabWorks
         {
             RadioButton[] radioButtons = { CaesarRadioButton, 
                 TritemiusLinearRadioButton, TritemiusSquaireRadioButton,
-                TritemiusSloganRadioButton, XORRadioButton, BookRadioButton, };
+                TritemiusSloganRadioButton, XORRadioButton, BookRadioButton, 
+                DesCBCRadioButton, DesECBRadioButton, DesCFBRadioButton,
+            ThreeCBCRadioButton, ThreeECBRadioButton, ThreeCFBRadioButton,
+            AesCBCRadioButton, AesECBRadioButton, AesCFBRadioButton, };
 
             foreach (var item in radioButtons)
             {

@@ -10,6 +10,8 @@ namespace SystemSecurityLabWorks.Cipher
     {
         public string Encrypt(string input, string key)
         {
+            input = input.ToLower();
+            key = key.ToLower();
             char[,] matrix = CreateMatrixFromPoem(key);
             //return GetStringMatrix(matrix);
             //return GetStringMatrix(FindAllNeededChars(matrix, 'м'));
@@ -19,7 +21,7 @@ namespace SystemSecurityLabWorks.Cipher
             Random rand = new Random();
             foreach (char c in chars)
             {
-                if (c == '\n') continue;
+                if (c == '\n' || c == '\r') continue;
                 int[,] coordinates = FindAllNeededChars(matrix, c);
                 if (coordinates == null)
                 {
@@ -37,6 +39,8 @@ namespace SystemSecurityLabWorks.Cipher
 
         public string Decrypt(string input, string key)
         {
+            input = input.ToLower();
+            key = key.ToLower();
             char[,] matrix = CreateMatrixFromPoem(key);
 
             string[] letters = input.Split();

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Security.Cryptography;
+using System.Windows;
 using SystemSecurityLabWorks.Cipher.TritemiusCipher;
 
 namespace SystemSecurityLabWorks.Cipher
@@ -10,11 +11,21 @@ namespace SystemSecurityLabWorks.Cipher
             "Tritemius (squaire)",
             "Tritemius (slogan)",
             "XOR",
-            "Book"
+            "Book",
+            "DES (CBC)",
+            "DES (ECB)",
+            "DES (CFB)",
+            "3-DES (CBC)",
+            "3-DES (ECB)",
+            "3-DES (CFB)",
+            "AES (CBC)",
+            "AES (ECB)",
+            "AES (CFB)",
         };
 
         public static string Encrypt(string input, string key, string cipher)
         {
+            DESCipher des;
             switch (cipher)
             {
                 case "Caesar":
@@ -41,6 +52,78 @@ namespace SystemSecurityLabWorks.Cipher
                     var book = new BookCipher();
                     return book.Encrypt(input, key);
 
+                case "DES (CBC)":
+                    des = new DESCipher
+                    {
+                        CipherType = "DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                    };
+                    return des.Encrypt(input, key);
+
+                case "DES (ECB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                    };
+                    return des.Encrypt(input, key);
+
+                case "DES (CFB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                    };
+                    return des.Encrypt(input, key);
+
+                    case "3-DES (CBC)":
+                    des = new DESCipher
+                    {
+                        CipherType = "3DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                    };
+                    return des.Encrypt(input, key);
+
+                case "3-DES (ECB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "3DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                    };
+                    return des.Encrypt(input, key);
+
+                case "3-DES (CFB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "3DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                    };
+                    return des.Encrypt(input, key);
+
+                case "AES (CBC)":
+                    des = new DESCipher
+                    {
+                        CipherType = "AES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                    };
+                    return des.Encrypt(input, key);
+
+                case "AES (ECB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "AES",
+                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                    };
+                    return des.Encrypt(input, key);
+
+                case "AES (CFB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "AES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                    };
+                    return des.Encrypt(input, key);
+
                 default: 
                     MessageBox.Show("Wrong cipher chosen");
                     return "Wrong cipher chosen";
@@ -49,6 +132,7 @@ namespace SystemSecurityLabWorks.Cipher
 
         public static string Decrypt(string input, string key, string cipher)
         {
+            DESCipher des;
             switch (cipher)
             {
                 case "Caesar":
@@ -74,6 +158,78 @@ namespace SystemSecurityLabWorks.Cipher
                 case "Book":
                     var book = new BookCipher();
                     return book.Decrypt(input, key);
+
+                case "DES (CBC)":
+                    des = new DESCipher
+                    {
+                        CipherType = "DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                    };
+                    return des.Decrypt(input, key);
+
+                case "DES (ECB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                    };
+                    return des.Decrypt(input, key);
+
+                case "DES (CFB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                    };
+                    return des.Decrypt(input, key);
+
+                case "3-DES (CBC)":
+                    des = new DESCipher
+                    {
+                        CipherType = "3DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                    };
+                    return des.Decrypt(input, key);
+
+                case "3-DES (ECB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "3DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                    };
+                    return des.Decrypt(input, key);
+
+                case "3-DES (CFB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "3DES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                    };
+                    return des.Decrypt(input, key);
+
+                case "AES (CBC)":
+                    des = new DESCipher
+                    {
+                        CipherType = "AES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                    };
+                    return des.Decrypt(input, key);
+
+                case "AES (ECB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "AES",
+                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                    };
+                    return des.Decrypt(input, key);
+
+                case "AES (CFB)":
+                    des = new DESCipher
+                    {
+                        CipherType = "AES",
+                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                    };
+                    return des.Decrypt(input, key);
 
                 default:
                     MessageBox.Show("Wrong cipher chosen");

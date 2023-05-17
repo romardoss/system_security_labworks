@@ -8,20 +8,20 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="SystemSecurityLabWorks.Cipher.XORCipher">
-    <Position X="7.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IQAAAAAAQAAAAAAQAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
-      <FileName>Cipher\XORCipher.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="SystemSecurityLabWorks.Cipher.CipherManager">
     <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Cipher\CipherManager.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="SystemSecurityLabWorks.Cipher.BookCipher">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAI=</HashCode>
+      <FileName>Cipher\BookCipher.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
