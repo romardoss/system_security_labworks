@@ -15,11 +15,11 @@
       <FileName>Cipher\CipherManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SystemSecurityLabWorks.Cipher.BookCipher">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+  <Class Name="SystemSecurityLabWorks.Cipher.DESCipher">
+    <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAgAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAI=</HashCode>
-      <FileName>Cipher\BookCipher.cs</FileName>
+      <HashCode>AQAAABIAAAAAAAAQABBAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cipher\DESCipher.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

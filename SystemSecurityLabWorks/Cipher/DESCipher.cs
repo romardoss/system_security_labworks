@@ -81,14 +81,7 @@ namespace SystemSecurityLabWorks.Cipher
                     IV = Encoding.UTF8.GetBytes(key),
                 };
 
-                if (isEncrypt)
-                {
-                    return _DES.CreateEncryptor();
-                }
-                else
-                {
-                    return _DES.CreateDecryptor();
-                }
+                return GetTransform(_DES, isEncrypt);
             }
             catch 
             { 
@@ -110,14 +103,8 @@ namespace SystemSecurityLabWorks.Cipher
                     Key = Encoding.UTF8.GetBytes(key),
                     IV = Encoding.UTF8.GetBytes(key.Substring(0, 8))
                 };
-                if (isEncrypt)
-                {
-                    return _3DES.CreateEncryptor();
-                }
-                else
-                {
-                    return _3DES.CreateDecryptor();
-                }
+
+                return GetTransform(_3DES, isEncrypt);
             }
             catch (Exception e)
             {
@@ -147,14 +134,8 @@ namespace SystemSecurityLabWorks.Cipher
                     Key = Encoding.UTF8.GetBytes(key),
                     IV = Encoding.UTF8.GetBytes(key.Substring(0, 16))
             };
-                if (isEncrypt)
-                {
-                    return _AES.CreateEncryptor();
-                }
-                else
-                {
-                    return _AES.CreateDecryptor();
-                }
+                
+                return GetTransform(_AES, isEncrypt);
             }
             catch
             {
@@ -162,6 +143,18 @@ namespace SystemSecurityLabWorks.Cipher
                 MessageBox.Show("Secure key is generated to the clipboard");
                 GenerateAndCopySecureKey(32);
                 return null;
+            }
+        }
+
+        private ICryptoTransform GetTransform(SymmetricAlgorithm alg, bool isEncrypt)
+        {
+            if (isEncrypt)
+            {
+                return alg.CreateEncryptor();
+            }
+            else
+            {
+                return alg.CreateDecryptor();
             }
         }
 
