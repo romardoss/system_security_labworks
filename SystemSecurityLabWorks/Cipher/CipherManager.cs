@@ -21,6 +21,7 @@ namespace SystemSecurityLabWorks.Cipher
             "AES (CBC)",
             "AES (ECB)",
             "AES (CFB)",
+            "Bag",
         };
 
         public static string Encrypt(string input, string key, string cipher)
@@ -56,7 +57,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                        cipherMode = CipherMode.CBC
                     };
                     return des.Encrypt(input, key);
 
@@ -64,7 +65,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                        cipherMode = CipherMode.ECB
                     };
                     return des.Encrypt(input, key);
 
@@ -72,7 +73,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                        cipherMode = CipherMode.CFB
                     };
                     return des.Encrypt(input, key);
 
@@ -80,7 +81,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "3DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                        cipherMode = CipherMode.CBC
                     };
                     return des.Encrypt(input, key);
 
@@ -88,7 +89,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "3DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                        cipherMode = CipherMode.ECB
                     };
                     return des.Encrypt(input, key);
 
@@ -96,7 +97,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "3DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                        cipherMode = CipherMode.CFB
                     };
                     return des.Encrypt(input, key);
 
@@ -104,7 +105,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "AES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                        cipherMode = CipherMode.CBC
                     };
                     return des.Encrypt(input, key);
 
@@ -112,7 +113,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "AES",
-                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                        cipherMode = CipherMode.ECB
                     };
                     return des.Encrypt(input, key);
 
@@ -120,9 +121,13 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "AES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                        cipherMode = CipherMode.CFB
                     };
                     return des.Encrypt(input, key);
+
+                /*case "Bag":
+                    BagCipher bag = new BagCipher();
+                    return bag.Encrypt(input, key);*/
 
                 default: 
                     MessageBox.Show("Wrong cipher chosen");
@@ -163,7 +168,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                        cipherMode = CipherMode.CBC
                     };
                     return des.Decrypt(input, key);
 
@@ -171,7 +176,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                        cipherMode = CipherMode.ECB
                     };
                     return des.Decrypt(input, key);
 
@@ -179,7 +184,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                        cipherMode = CipherMode.CFB
                     };
                     return des.Decrypt(input, key);
 
@@ -187,7 +192,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "3DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                        cipherMode = CipherMode.CBC
                     };
                     return des.Decrypt(input, key);
 
@@ -195,7 +200,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "3DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                        cipherMode = CipherMode.ECB
                     };
                     return des.Decrypt(input, key);
 
@@ -203,7 +208,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "3DES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                        cipherMode = CipherMode.CFB
                     };
                     return des.Decrypt(input, key);
 
@@ -211,7 +216,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "AES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CBC
+                        cipherMode = CipherMode.CBC
                     };
                     return des.Decrypt(input, key);
 
@@ -219,7 +224,7 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "AES",
-                        cipherMode = System.Security.Cryptography.CipherMode.ECB
+                        cipherMode = CipherMode.ECB
                     };
                     return des.Decrypt(input, key);
 
@@ -227,9 +232,13 @@ namespace SystemSecurityLabWorks.Cipher
                     des = new DESCipher
                     {
                         CipherType = "AES",
-                        cipherMode = System.Security.Cryptography.CipherMode.CFB
+                        cipherMode = CipherMode.CFB
                     };
                     return des.Decrypt(input, key);
+
+                /*case "Bag":
+                    BagCipher bag = new BagCipher();
+                    return bag.Decrypt(input, key);*/
 
                 default:
                     MessageBox.Show("Wrong cipher chosen");

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SystemSecurityLabWorks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="850">
+        Title="MainWindow" Height="450" Width="950">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="25"/>
@@ -62,12 +62,21 @@
                 <RadioButton x:Name="AesCBCRadioButton" Content="AES (CBC)" Canvas.Left="680" Canvas.Top="280" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="AesECBRadioButton" Content="AES (ECB)" Canvas.Left="680" Canvas.Top="300" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="AesCFBRadioButton" Content="AES (CFB)" Canvas.Left="680" Canvas.Top="320" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
-
+                <RadioButton x:Name="BagRadioButton" Content="Bag" Canvas.Left="850" Canvas.Top="40" IsChecked="False" RenderTransformOrigin="0.5,0.5" Checked="BagRadioButton_Checked" Unchecked="BagRadioButton_Unchecked"/>
             </Canvas>
         </Canvas>
         <TextBox x:Name="KeyText" TextWrapping="Wrap" Text="Key" Width="600" Height="30" Grid.Row="1" 
                  VerticalAlignment="Top" Margin="60,40,0,0" HorizontalAlignment="Left"
                  VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
+        <Button x:Name="BagGenerateKeyButton" VerticalAlignment="Top" Margin="60,40,0,0" 
+                HorizontalAlignment="Left" Grid.Row="1"
+                Height="30" Width="100" Content="Generate key" Background="White" Visibility="Hidden" Click="BagGenerateKeyButton_Click"/>
+        <Button x:Name="BagEncryptingKeyButton" VerticalAlignment="Top" Margin="170,40,0,0" 
+                HorizontalAlignment="Left" Grid.Row="1"
+                Height="30" Width="100" Content="Encrypting key" Background="White" Visibility="Hidden" Click="BagEncryptingKeyButton_Click"/>
+        <Button x:Name="BagDecryptingKeyButton" VerticalAlignment="Top" Margin="280,40,0,0" 
+                HorizontalAlignment="Left" Grid.Row="1"
+                Height="30" Width="100" Content="Decrypting key" Background="White" Visibility="Hidden" Click="BagDecryptingKeyButton_Click"/>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
@@ -83,7 +92,8 @@
             <Button x:Name="SaveFileButton" Content="Save file" Grid.Column="2" Click="SaveFileButton_Click"/>
             <Button x:Name="EncryptButton" Content="Encrypt" Grid.Column="3" Click="EncryptButton_Click"/>
             <Button x:Name="DecryptButton" Content="Decrypt" Grid.Column="4" Click="DecryptButton_Click"/>
-            <Button x:Name="AboutButton" Content="About" Grid.Column="7" Click="AboutButton_Click"/>
+            <Button x:Name="AboutButton" Content="About" Grid.Column="7" Click="AboutButton_Click" 
+                    HorizontalAlignment="Right" Margin="0,0,30,0"/>
         </Grid>
     </Grid>
 </Window>
