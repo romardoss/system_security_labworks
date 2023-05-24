@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SystemSecurityLabWorks.Cipher.BagCipher;
 
 namespace SystemSecurityLabWorks.CiphersAdditionalWindows.BagWindows
 {
@@ -22,6 +23,41 @@ namespace SystemSecurityLabWorks.CiphersAdditionalWindows.BagWindows
         public BagGenerateKeyWindow()
         {
             InitializeComponent();
+        }
+
+        private void GenerateKeyBagWindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            BagGenerateKey genKey = new BagGenerateKey();
+            if (!int.TryParse(KeySizeTextBox.Text, out int size))
+            {
+                MessageBox.Show("The input must be a number. Default number is 5 elements");
+            }
+            genKey.KeySize = size;
+            genKey.GenerateKey();
+            PrivateKeyGenerateTextBox.Text = genKey.GetStringOfSequence(genKey.PrivateSequence);
+            BagMTextBox.Text = genKey.M.ToString();
+            BagTTextBox.Text = genKey.T.ToString();
+            PublicKeyGenerateTextBox.Text = genKey.GetStringOfSequence(genKey.PublicSequence);
+        }
+
+        private void CopyTextPublicKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(PublicKeyGenerateTextBox.Text);
+        }
+
+        private void CopyTextPrivateKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(PrivateKeyGenerateTextBox.Text);
+        }
+
+        private void CopyTextMKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(BagMTextBox.Text);
+        }
+
+        private void CopyTextTKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(BagTTextBox.Text);
         }
     }
 }

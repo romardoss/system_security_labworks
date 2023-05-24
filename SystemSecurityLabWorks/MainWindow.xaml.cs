@@ -12,6 +12,7 @@ namespace SystemSecurityLabWorks
         public MainWindow()
         {
             InitializeComponent();
+            CipherManager.mainWindow = this;
         }
 
         private void OpenFileButton_Click(object sender, RoutedEventArgs e)
@@ -79,6 +80,8 @@ namespace SystemSecurityLabWorks
             BagEncryptingKeyButton.Visibility = Visibility.Visible;
             BagDecryptingKeyButton.Visibility = Visibility.Visible;
             KeyText.Visibility = Visibility.Hidden;
+            EncryptButton.Visibility = Visibility.Hidden;
+            DecryptButton.Visibility = Visibility.Hidden;
         }
 
         private void BagRadioButton_Unchecked(object sender, RoutedEventArgs e)
@@ -87,6 +90,8 @@ namespace SystemSecurityLabWorks
             BagEncryptingKeyButton.Visibility = Visibility.Hidden;
             BagDecryptingKeyButton.Visibility = Visibility.Hidden;
             KeyText.Visibility = Visibility.Visible;
+            EncryptButton.Visibility = Visibility.Visible;
+            DecryptButton.Visibility = Visibility.Visible;
         }
 
         private void BagGenerateKeyButton_Click(object sender, RoutedEventArgs e)

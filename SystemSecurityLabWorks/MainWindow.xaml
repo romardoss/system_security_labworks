@@ -73,10 +73,10 @@
                 Height="30" Width="100" Content="Generate key" Background="White" Visibility="Hidden" Click="BagGenerateKeyButton_Click"/>
         <Button x:Name="BagEncryptingKeyButton" VerticalAlignment="Top" Margin="170,40,0,0" 
                 HorizontalAlignment="Left" Grid.Row="1"
-                Height="30" Width="100" Content="Encrypting key" Background="White" Visibility="Hidden" Click="BagEncryptingKeyButton_Click"/>
+                Height="30" Width="100" Content="Encrypt" Background="White" Visibility="Hidden" Click="BagEncryptingKeyButton_Click"/>
         <Button x:Name="BagDecryptingKeyButton" VerticalAlignment="Top" Margin="280,40,0,0" 
                 HorizontalAlignment="Left" Grid.Row="1"
-                Height="30" Width="100" Content="Decrypting key" Background="White" Visibility="Hidden" Click="BagDecryptingKeyButton_Click"/>
+                Height="30" Width="100" Content="Decrypt" Background="White" Visibility="Hidden" Click="BagDecryptingKeyButton_Click"/>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>

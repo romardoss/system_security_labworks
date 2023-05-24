@@ -26,9 +26,9 @@
     </Window.Resources>
     <Grid Background="#B6C8A9">
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Enter your encrypting key" VerticalAlignment="Top" Margin="0,70,0,0"/>
-        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="274"
+        <TextBox x:Name="KeyText" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="274"
                  VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Height="109"/>
-        <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,200,0,0"/>
+        <Button x:Name="EncryptingButton" Content="Encrypt" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,200,0,0" Click="EncryptingButton_Click"/>
 
     </Grid>
 </Window>

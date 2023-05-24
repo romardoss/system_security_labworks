@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Windows;
+using SystemSecurityLabWorks.Cipher.BagCipher;
 using SystemSecurityLabWorks.Cipher.TritemiusCipher;
 
 namespace SystemSecurityLabWorks.Cipher
@@ -23,6 +24,7 @@ namespace SystemSecurityLabWorks.Cipher
             "AES (CFB)",
             "Bag",
         };
+        public static MainWindow mainWindow;
 
         public static string Encrypt(string input, string key, string cipher)
         {
@@ -125,9 +127,9 @@ namespace SystemSecurityLabWorks.Cipher
                     };
                     return des.Encrypt(input, key);
 
-                /*case "Bag":
-                    BagCipher bag = new BagCipher();
-                    return bag.Encrypt(input, key);*/
+                case "Bag":
+                    BagCipherCode bag = new BagCipherCode();
+                    return bag.Encrypt(input, key);
 
                 default: 
                     MessageBox.Show("Wrong cipher chosen");
@@ -236,9 +238,9 @@ namespace SystemSecurityLabWorks.Cipher
                     };
                     return des.Decrypt(input, key);
 
-                /*case "Bag":
-                    BagCipher bag = new BagCipher();
-                    return bag.Decrypt(input, key);*/
+                case "Bag":
+                    BagCipherCode bag = new BagCipherCode();
+                    return bag.Decrypt(input, key);
 
                 default:
                     MessageBox.Show("Wrong cipher chosen");

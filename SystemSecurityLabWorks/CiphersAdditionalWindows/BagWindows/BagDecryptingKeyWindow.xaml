@@ -27,13 +27,13 @@
     <Grid Background="#B6C8A9">
         <TextBlock HorizontalAlignment="Center" Margin="0,24,0,0" TextWrapping="Wrap" Text="Enter needed values" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="120,59,0,0" TextWrapping="Wrap" Text="Private sequence" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="72,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"
+        <TextBox x:Name="PrivateSeqKeyText" HorizontalAlignment="Left" Margin="72,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"
                  VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Height="112"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,62,0,0" TextWrapping="Wrap" Text="Value of M" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="359,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="KeyMText" HorizontalAlignment="Left" Margin="359,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="394,167,0,0" TextWrapping="Wrap" Text="Value of t" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="359,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Save" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="KeyTText" HorizontalAlignment="Left" Margin="359,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="DecryptingButton" Content="Decrypt" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Center" Click="DecryptingButton_Click"/>
 
     </Grid>
 </Window>

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SystemSecurityLabWorks.Cipher;
+using SystemSecurityLabWorks.UIControllers;
 
 namespace SystemSecurityLabWorks.CiphersAdditionalWindows.BagWindows
 {
@@ -22,6 +24,16 @@ namespace SystemSecurityLabWorks.CiphersAdditionalWindows.BagWindows
         public BagEncryptingKeyWindow()
         {
             InitializeComponent();
+        }
+
+        private void EncryptingButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = CipherManager.mainWindow;
+            string input = w.WorkingText.Text;
+            var answer = CipherManager.Encrypt(input, KeyText.Text, "Bag");
+            var fileController = new FileController();
+            fileController.PrintFile(w.WorkingText, answer);
+            Close();
         }
     }
 }

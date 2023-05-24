@@ -25,23 +25,23 @@
         </Style>
     </Window.Resources>
     <Grid Background="#B6C8A9">
-        <Button Content="Generate key" HorizontalAlignment="Left" Margin="315,10,0,0" VerticalAlignment="Top"/>
-        <Button Content="Copy text" HorizontalAlignment="Left" Margin="52,142,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="52,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="59"
+        <Button x:Name="GenerateKeyBagWindowButton" Content="Generate key" HorizontalAlignment="Left" Margin="315,10,0,0" VerticalAlignment="Top" Click="GenerateKeyBagWindowButton_Click"/>
+        <Button x:Name="CopyTextPublicKeyButton" Content="Copy text" HorizontalAlignment="Left" Margin="52,142,0,0" VerticalAlignment="Top" Click="CopyTextPublicKeyButton_Click"/>
+        <TextBox x:Name="PublicKeyGenerateTextBox" HorizontalAlignment="Left" Margin="52,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="59"
                  VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
         <TextBlock HorizontalAlignment="Left" Margin="85,49,0,0" TextWrapping="Wrap" Text="Public key" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="346,49,0,0" TextWrapping="Wrap" Text="Private key" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="315,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="59"
+        <TextBox x:Name="PrivateKeyGenerateTextBox" HorizontalAlignment="Left" Margin="315,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="59"
                  VerticalScrollBarVisibility="Visible" AcceptsReturn="True"/>
-        <Button Content="Copy text" HorizontalAlignment="Left" Margin="315,142,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="CopyTextPrivateKeyButton" Content="Copy text" HorizontalAlignment="Left" Margin="315,142,0,0" VerticalAlignment="Top" Click="CopyTextPrivateKeyButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="52,15,0,0" TextWrapping="Wrap" Text="Numbers in key" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="140,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
-        <Button Content="Copy text" HorizontalAlignment="Left" Margin="52,249,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="52,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="29"/>
+        <TextBox x:Name="KeySizeTextBox" HorizontalAlignment="Left" Margin="140,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="CopyTextMKeyButton" Content="Copy text" HorizontalAlignment="Left" Margin="52,249,0,0" VerticalAlignment="Top" Click="CopyTextMKeyButton_Click"/>
+        <TextBox x:Name="BagMTextBox" HorizontalAlignment="Left" Margin="52,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="29"/>
         <TextBlock HorizontalAlignment="Left" Margin="106,188,0,0" TextWrapping="Wrap" Text="M" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="375,188,0,0" TextWrapping="Wrap" Text="t" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="315,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="29"/>
-        <Button Content="Copy text" HorizontalAlignment="Left" Margin="315,249,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="BagTTextBox" HorizontalAlignment="Left" Margin="315,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="29"/>
+        <Button x:Name="CopyTextTKeyButton" Content="Copy text" HorizontalAlignment="Left" Margin="315,249,0,0" VerticalAlignment="Top" Click="CopyTextTKeyButton_Click"/>
 
     </Grid>
 </Window>
