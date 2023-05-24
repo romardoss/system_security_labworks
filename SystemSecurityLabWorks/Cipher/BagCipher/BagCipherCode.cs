@@ -1,14 +1,8 @@
 ﻿using Org.BouncyCastle.Math;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
-using System.Windows.Media.Media3D;
 
 namespace SystemSecurityLabWorks.Cipher.BagCipher
 {
@@ -89,10 +83,10 @@ namespace SystemSecurityLabWorks.Cipher.BagCipher
                 int sum = decryptedArray[i];
                 for (int j = matrix.GetLength(1)-1; j >= 0; j--)
                 {
-                    /*if(sum == 0)
+                    if(sum <= 0)
                     {
                         break;
-                    }*/
+                    }
                     if(sum >= privateSequence[j])
                     {
                         matrix[i, j] = 1;
@@ -100,7 +94,7 @@ namespace SystemSecurityLabWorks.Cipher.BagCipher
                     }
                     else matrix[i, j] = 0;
                 }
-                if (sum != 0) throw new Exception("sum not equal 0");
+                //if (sum != 0) throw new Exception("sum not equal 0");
             }
             return matrix;
         }

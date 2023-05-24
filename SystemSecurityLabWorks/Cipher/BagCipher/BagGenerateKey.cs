@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using System.Windows;
-using System.Windows.Media.Media3D;
-using Org.BouncyCastle;
-using Org.BouncyCastle.Math;
 
 namespace SystemSecurityLabWorks.Cipher.BagCipher
 {
