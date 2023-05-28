@@ -63,6 +63,7 @@
                 <RadioButton x:Name="AesECBRadioButton" Content="AES (ECB)" Canvas.Left="680" Canvas.Top="300" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="AesCFBRadioButton" Content="AES (CFB)" Canvas.Left="680" Canvas.Top="320" IsChecked="False" RenderTransformOrigin="0.5,0.5"/>
                 <RadioButton x:Name="BagRadioButton" Content="Bag" Canvas.Left="850" Canvas.Top="40" IsChecked="False" RenderTransformOrigin="0.5,0.5" Checked="BagRadioButton_Checked" Unchecked="BagRadioButton_Unchecked"/>
+                <RadioButton x:Name="RsaRadioButton" Content="RSA" Canvas.Left="850" Canvas.Top="60" IsChecked="False" RenderTransformOrigin="0.5,0.5" Checked="RsaRadioButton_Checked" Unchecked="RsaRadioButton_Unchecked"/>
             </Canvas>
         </Canvas>
         <TextBox x:Name="KeyText" TextWrapping="Wrap" Text="Key" Width="600" Height="30" Grid.Row="1" 
@@ -77,6 +78,15 @@
         <Button x:Name="BagDecryptingKeyButton" VerticalAlignment="Top" Margin="280,40,0,0" 
                 HorizontalAlignment="Left" Grid.Row="1"
                 Height="30" Width="100" Content="Decrypt" Background="White" Visibility="Hidden" Click="BagDecryptingKeyButton_Click"/>
+        <Button x:Name="RsaGeneratePrivateKeyButton" VerticalAlignment="Top" Margin="510,40,0,0" 
+                HorizontalAlignment="Left" Grid.Row="1"
+                Height="30" Width="70" Content="Private key" Background="White" Visibility="Visible" Click="RsaGeneratePrivateKeyButton_Click"/>
+        <Button x:Name="RsaGeneratePublicKeyButton" VerticalAlignment="Top" Margin="590,40,0,0" 
+                HorizontalAlignment="Left" Grid.Row="1"
+                Height="30" Width="70" Content="Public key" Background="White"  Visibility="Visible" Click="RsaGeneratePublicKeyButton_Click"/>
+        <Button x:Name="RsaGenerateKeysButton" VerticalAlignment="Top" Margin="430,40,0,0" 
+                HorizontalAlignment="Left" Grid.Row="1"
+                Height="30" Width="70" Content="Generate" Background="White" Visibility="Visible" Click="RsaGenerateKeysButton_Click"/>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>

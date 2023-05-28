@@ -23,6 +23,7 @@ namespace SystemSecurityLabWorks.Cipher
             "AES (ECB)",
             "AES (CFB)",
             "Bag",
+            "RSA",
         };
         public static MainWindow mainWindow;
 
@@ -130,6 +131,10 @@ namespace SystemSecurityLabWorks.Cipher
                 case "Bag":
                     BagCipherCode bag = new BagCipherCode();
                     return bag.Encrypt(input, key);
+
+                case "RSA":
+                    RSACipher rsa = new RSACipher();
+                    return rsa.Encrypt(input, key);
 
                 default: 
                     MessageBox.Show("Wrong cipher chosen");
@@ -241,6 +246,10 @@ namespace SystemSecurityLabWorks.Cipher
                 case "Bag":
                     BagCipherCode bag = new BagCipherCode();
                     return bag.Decrypt(input, key);
+
+                case "RSA":
+                    RSACipher rsa = new RSACipher();
+                    return rsa.Decrypt(input, key);
 
                 default:
                     MessageBox.Show("Wrong cipher chosen");

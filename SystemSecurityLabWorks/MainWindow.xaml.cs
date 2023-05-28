@@ -50,7 +50,7 @@ namespace SystemSecurityLabWorks
                 TritemiusSloganRadioButton, XORRadioButton, BookRadioButton, 
                 DesCBCRadioButton, DesECBRadioButton, DesCFBRadioButton,
             ThreeCBCRadioButton, ThreeECBRadioButton, ThreeCFBRadioButton,
-            AesCBCRadioButton, AesECBRadioButton, AesCFBRadioButton, };
+            AesCBCRadioButton, AesECBRadioButton, AesCFBRadioButton, RsaRadioButton};
 
             foreach (var item in radioButtons)
             {
@@ -110,6 +110,42 @@ namespace SystemSecurityLabWorks
         {
             BagDecryptingKeyWindow window = new BagDecryptingKeyWindow();
             window.Show();
+        }
+
+        private void RsaRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RsaGeneratePrivateKeyButton.Visibility = Visibility.Visible;
+            RsaGeneratePublicKeyButton.Visibility = Visibility.Visible;
+            RsaGenerateKeysButton.Visibility = Visibility.Visible;
+            KeyText.Width = 360;
+        }
+
+        private void RsaRadioButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            RsaGeneratePrivateKeyButton.Visibility = Visibility.Hidden;
+            RsaGeneratePublicKeyButton.Visibility = Visibility.Hidden;
+            RsaGenerateKeysButton.Visibility = Visibility.Hidden;
+            KeyText.Width = 600;
+        }
+
+        private void RsaGenerateKeysButton_Click(object sender, RoutedEventArgs e)
+        {
+            RSACipher.GenerateKeys();
+            MessageBox.Show("New keys have generated successfully");
+        }
+
+        private void RsaGeneratePrivateKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            string key = RSACipher.PrivateKey;
+            Clipboard.SetText(key);
+            MessageBox.Show("Private key was copied to the clipboard");
+        }
+
+        private void RsaGeneratePublicKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            string key = RSACipher.PublicKey;
+            Clipboard.SetText(key);
+            MessageBox.Show("Public key was copied to the clipboard");
         }
     }
 }
