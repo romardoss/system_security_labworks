@@ -133,8 +133,7 @@ namespace SystemSecurityLabWorks.Cipher
                     return bag.Encrypt(input, key);
 
                 case "RSA":
-                    RSACipher rsa = new RSACipher();
-                    return rsa.Encrypt(input, key);
+                    return RSACipher.Encrypt(input, key);
 
                 default: 
                     MessageBox.Show("Wrong cipher chosen");
@@ -248,8 +247,7 @@ namespace SystemSecurityLabWorks.Cipher
                     return bag.Decrypt(input, key);
 
                 case "RSA":
-                    RSACipher rsa = new RSACipher();
-                    return rsa.Decrypt(input, key);
+                    return RSACipher.Decrypt(input, key);
 
                 default:
                     MessageBox.Show("Wrong cipher chosen");
